@@ -9,9 +9,14 @@ namespace Polygon.WebApi.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IEnumerable<string> Get(int matricula, double valorHora, double horasTrabalhadas)
         {
-            return new string[] { "value1", "value2" };
+            Funcionario f = new Funcionario(matricula, valorHora, horasTrabalhadas);
+            Calculo calc = new Calculo(f);
+
+            double SalarioBruto = calc.CalcularSalarioBruto(f.ValorHora, f.HorasTrabalhadas);
+
+            return new string[] { "value" };
         }
 
         // GET api/values/5
