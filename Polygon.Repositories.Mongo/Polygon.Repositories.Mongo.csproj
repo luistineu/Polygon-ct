@@ -8,4 +8,8 @@
     <PackageReference Include="MongoDb.Driver" Version="2.6.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Polygon.Domain\Polygon.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
